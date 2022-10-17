@@ -1,30 +1,23 @@
 <template>
-  <ValidationForm class="w-[513px] flex flex-col space-y-10">
-    <BaseInput
-      kaName="სახელი"
-      name="name"
-      type="text"
-      rules="required|min:3|max:256|alpha"
-    />
-    <BaseInput
-      kaName="გვარი"
-      name="surname"
-      type="text"
-      rules="required|min:3"
-    />
-    <BaseInput
-      kaName="იმეილი"
-      name="email"
-      type="email"
-      rules="required|email|redberry_email"
-    />
-  </ValidationForm>
+  <BaseHeader page="2" class="" />
+  <div class="flex justify-center">
+    <div class="flex max-w-[1520px] w-full justify-between">
+      <PageTwoForm />
+      <!-- <div
+        class="w-full h-full bg-[url('@/assets/images/page2_image.png')] bg-center bg-no-repeat bg-cover"
+      ></div> -->
+      <div class="w-[750px]">
+        <img src="@/assets/images/page2_image.png" alt="illustration" />
+      </div>
+    </div>
+  </div>
+  <ForwardButton active="false" />
 </template>
 
 <script>
-import { Form as ValidationForm } from "vee-validate";
-import BaseInput from "../components/form/BaseInput.vue";
+import PageTwoForm from "@/components/form/PageTwoForm.vue";
+
 export default {
-  components: { BaseInput, ValidationForm },
+  components: { PageTwoForm },
 };
 </script>
