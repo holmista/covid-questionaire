@@ -1,5 +1,5 @@
 <template>
-  <div v-if="active" class="flex justify-center">
+  <div v-if="active === 'yes'" class="flex justify-center">
     <img
       src="@/assets/images/dark_forward_button.png"
       alt="forward"
@@ -19,7 +19,7 @@
 export default {
   props: {
     active: {
-      type: Boolean,
+      type: String,
       required: true,
     },
   },

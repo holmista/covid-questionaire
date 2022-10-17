@@ -31,5 +31,10 @@ import RequireFields from "./RequireFields.vue";
 
 export default {
   components: { ValidationForm, BaseInput, RequireFields },
+  methods: {
+    nameEvent(val) {
+      console.log(val);
+    },
+  },
 };
 </script>

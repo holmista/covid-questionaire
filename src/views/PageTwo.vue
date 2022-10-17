@@ -3,15 +3,12 @@
   <div class="flex justify-center">
     <div class="flex max-w-[1520px] w-full justify-between">
       <PageTwoForm />
-      <!-- <div
-        class="w-full h-full bg-[url('@/assets/images/page2_image.png')] bg-center bg-no-repeat bg-cover"
-      ></div> -->
       <div class="w-[750px]">
         <img src="@/assets/images/page2_image.png" alt="illustration" />
       </div>
     </div>
   </div>
-  <ForwardButton active="false" />
+  <ForwardButton active="no" />
 </template>
 
 <script>
