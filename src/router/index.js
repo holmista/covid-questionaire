@@ -1,13 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
+import PageTwo from "../views/PageTwo.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // {
-    //   path: "/",
-    //   name: "home",
-    //   component: HomeView,
-    // },
+    {
+      path: "/2",
+      name: "page-two",
+      component: PageTwo,
+    },
     // {
     //   path: "/about",
     //   name: "about",

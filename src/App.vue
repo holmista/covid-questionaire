@@ -3,6 +3,5 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <div class="h-10 w-10 bg-red-500">hello world</div>
   <RouterView />
 </template>
