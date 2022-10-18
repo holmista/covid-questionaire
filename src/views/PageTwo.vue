@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import PageTwoForm from "@/components/form/PageTwoForm.vue";
+import PageTwoForm from "@/components/forms/PageTwoForm.vue";
 
 export default {
   components: { PageTwoForm },

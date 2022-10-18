@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import PageThreeForm from "@/components/form/PageThreeForm.vue";
+import PageThreeForm from "@/components/forms/PageThreeForm.vue";
 export default {
   components: { PageThreeForm },
 };

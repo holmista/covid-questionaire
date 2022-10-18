@@ -10,6 +10,7 @@ import "./config/vee-validate/messages";
 
 const app = createApp(App);
 
+app.config.unwrapInjectedRef = true;
 app.component("ForwardButton", ForwardButton);
 app.component("BaseHeader", BaseHeader);
 app.use(router);

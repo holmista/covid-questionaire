@@ -26,7 +26,7 @@
 
 <script>
 import { Form as ValidationForm } from "vee-validate";
-import BaseInput from "./BaseInput.vue";
+import BaseInput from "../form_elements/BaseInput.vue";
 import RequireFields from "./RequireFields.vue";
 
 export default {
