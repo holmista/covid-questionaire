@@ -4,12 +4,23 @@
       თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების
       რაოდენობა*
     </p>
-    <BaseDate name="test_date" />
+    <BaseDate name="test_date" placeholder="რიცხვი" />
+    <div>
+      <label for="number"></label>
+      <Field
+        name="number"
+        type="number"
+        rules="required|numeric"
+        class="border-[#232323] border-solid border-[1px] py-2 px-5 h-12 text-lg text-[#232323] mb-1 font-light focus:outline-none w-full"
+        placeholder="ანტისხეულების რაოდენობა"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import BaseDate from "./BaseDate.vue";
+import { Field } from "vee-validate";
 export default {
   props: {
     visible: {
@@ -17,6 +28,6 @@ export default {
       required: true,
     },
   },
-  components: { BaseDate },
+  components: { BaseDate, Field },
 };
 </script>
