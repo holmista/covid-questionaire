@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col space-y-3">
+  <div v-if="visible === 'yes'" class="flex flex-col space-y-3">
     <label for="vaccination_stage" class="text-xl font-bold"
       >აირჩიე რა ეტაპზე ხარ*
     </label>
@@ -20,5 +20,11 @@ import BaseRadio from "./BaseRadio.vue";
 import RegisterNow from "./RegisterNow.vue";
 export default {
   components: { BaseRadio, RegisterNow },
+  props: {
+    visible: {
+      type: String,
+      required: true,
+    },
+  },
 };
 </script>
