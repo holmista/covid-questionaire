@@ -1,20 +1,18 @@
 <template>
   <ValidationForm class="w-[513px] flex flex-col space-y-10">
-    <div>
-      <label for="had_vaccine"></label>
-      <BaseRadio name="had_vaccine" value="კი" />
-      <BaseRadio name="had_vaccine" value="არა" />
-    </div>
+    <AlreadyVaccinated />
+    <VaccinationStage />
   </ValidationForm>
 </template>
 <script>
 import { Form as ValidationForm } from "vee-validate";
-import BaseRadio from "../form_elements/BaseRadio.vue";
-
+import AlreadyVaccinated from "@/components/form_elements/AlreadyVaccinated.vue";
+import VaccinationStage from "@/components/form_elements/VaccinationStage.vue";
 export default {
   components: {
     ValidationForm,
-    BaseRadio,
+    AlreadyVaccinated,
+    VaccinationStage,
   },
 };
 </script>
