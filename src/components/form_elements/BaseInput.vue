@@ -6,7 +6,6 @@
       :type="type"
       :rules="rules"
       class="border-[#232323] border-solid border-[1px] py-2 px-5 h-12 text-lg text-[#232323] mb-1 font-light focus:outline-none"
-      v-model="value"
     />
     <div class="flex items-center justify-center">
       <ErrorMessage
@@ -43,11 +42,6 @@ export default {
       type: String,
       required: true,
     },
-  },
-  data() {
-    return {
-      value: "",
-    };
   },
 };
 </script>
