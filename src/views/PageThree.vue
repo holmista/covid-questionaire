@@ -8,7 +8,10 @@
       </div>
     </div>
   </div>
-  <ForwardButton active="no" />
+  <nav class="flex space-x-24 justify-center">
+    <img src="@/assets/images/back_button.png" alt="back" />
+    <ForwardButton active="no" />
+  </nav>
 </template>
 
 <script>

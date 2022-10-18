@@ -2,7 +2,7 @@
   <ValidationForm class="w-[513px] flex flex-col space-y-10">
     <HadCovidSelect />
     <AntibodiesSelect visible="yes" />
-    <AntibodiesDetails visible="yes" />
+    <AntibodiesDetails visible="no" />
     <WhenHadCovid visible="yes" />
   </ValidationForm>
 </template>
