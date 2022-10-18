@@ -13,10 +13,12 @@
       value="პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე"
     />
   </div>
+  <RegisterNow visible="no" />
 </template>
 <script>
 import BaseRadio from "./BaseRadio.vue";
+import RegisterNow from "./RegisterNow.vue";
 export default {
-  components: { BaseRadio },
+  components: { BaseRadio, RegisterNow },
 };
 </script>
