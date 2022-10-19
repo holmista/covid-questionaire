@@ -6,32 +6,32 @@ const router = createRouter({
     {
       path: "/landing",
       name: "landing_page",
-      component: () => import("../views/PageOne.vue"),
+      component: () => import("@/views/PageOne.vue"),
     },
     {
       path: "/basic-information",
       name: "basic_information_page",
-      component: () => import("../views/PageTwo.vue"),
+      component: () => import("@/views/PageTwo.vue"),
     },
     {
       path: "/covid-information",
       name: "covid_information_page",
-      component: () => import("../views/PageThree.vue"),
+      component: () => import("@/views/PageThree.vue"),
     },
     {
       path: "/vaccination-information",
       name: "vaccination_information_page",
-      component: () => import("../views/PageFour.vue"),
+      component: () => import("@/views/PageFour.vue"),
     },
     {
       path: "/office-information",
       name: "office_information_page",
-      component: () => import("../views/PageFive.vue"),
+      component: () => import("@/views/PageFive.vue"),
     },
     {
       path: "/6",
       name: "page-six",
-      component: () => import("../views/PageSix.vue"),
+      component: () => import("@/views/PageSix.vue"),
     },
     // {
     //   path: "/about",
