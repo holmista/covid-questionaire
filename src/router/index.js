@@ -4,28 +4,28 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/1",
-      name: "page-one",
+      path: "/landing",
+      name: "landing_page",
       component: () => import("../views/PageOne.vue"),
     },
     {
-      path: "/2",
-      name: "page-two",
+      path: "/basic-information",
+      name: "basic_information_page",
       component: () => import("../views/PageTwo.vue"),
     },
     {
-      path: "/3",
-      name: "page-three",
+      path: "/covid-information",
+      name: "covid_information_page",
       component: () => import("../views/PageThree.vue"),
     },
     {
-      path: "/4",
-      name: "page-four",
+      path: "/vaccination-information",
+      name: "vaccination_information_page",
       component: () => import("../views/PageFour.vue"),
     },
     {
-      path: "/5",
-      name: "page-five",
+      path: "/office-information",
+      name: "office_information_page",
       component: () => import("../views/PageFive.vue"),
     },
     {

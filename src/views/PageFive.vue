@@ -23,7 +23,7 @@
     </div>
   </div>
   <nav class="flex justify-center mt-20 mb-24">
-    <BackButton to="/4" />
+    <BackButton :to="{ name: 'vaccination_information_page' }" />
   </nav>
 </template>
 <script>

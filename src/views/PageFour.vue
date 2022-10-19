@@ -9,8 +9,8 @@
     </div>
   </div>
   <nav class="flex space-x-24 justify-center">
-    <BackButton to="/3" />
-    <ForwardButton active="no" to="/5" />
+    <BackButton :to="{ name: 'covid_information_page' }" />
+    <ForwardButton active="no" :to="{ name: 'office_information_page' }" />
   </nav>
 </template>
 
