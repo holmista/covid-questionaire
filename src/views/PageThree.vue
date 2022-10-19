@@ -9,16 +9,17 @@
     </div>
   </div>
   <nav class="flex space-x-24 justify-center">
-    <img src="@/assets/images/back_button.png" alt="back" />
-    <ForwardButton active="no" />
+    <BackButton to="/2" />
+    <ForwardButton active="no" to="/4" />
   </nav>
 </template>
 
 <script>
 import PageThreeForm from "@/components/forms/PageThreeForm.vue";
 import ForwardButton from "@/components/layout/ForwardButton.vue";
+import BackButton from "@/components/layout/BackButton.vue";
 
 export default {
-  components: { PageThreeForm, ForwardButton },
+  components: { PageThreeForm, ForwardButton, BackButton },
 };
 </script>

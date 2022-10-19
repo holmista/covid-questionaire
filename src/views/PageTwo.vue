@@ -8,7 +8,7 @@
       </div>
     </div>
   </div>
-  <ForwardButton active="no" />
+  <ForwardButton active="yes" to="/3" />
 </template>
 
 <script>

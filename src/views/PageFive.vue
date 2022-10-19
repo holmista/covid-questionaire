@@ -23,13 +23,14 @@
     </div>
   </div>
   <nav class="flex justify-center mt-20 mb-24">
-    <img src="@/assets/images/back_button.png" alt="back" />
+    <BackButton to="/4" />
   </nav>
 </template>
 <script>
 import PageFiveForm from "@/components/forms/PageFiveForm.vue";
 import BaseHeader from "@/components/layout/BaseHeader.vue";
+import BackButton from "@/components/layout/BackButton.vue";
 export default {
-  components: { PageFiveForm, BaseHeader },
+  components: { PageFiveForm, BaseHeader, BackButton },
 };
 </script>
