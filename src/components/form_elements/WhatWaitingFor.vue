@@ -9,7 +9,13 @@
     <BaseRadio name="waiting_for" value="გადატანილი მაქვს და ვგეგმავ აცრას" />
   </div>
   <RegisterNow visible="no" class="ml-8" />
-  <CovidRegisterLink visible="yes" class="ml-8" />
+  <CovidRegisterLink visible="no" class="ml-8" />
+  <CovidRegisterLink visible="yes" class="ml-8 max-w-[400px]">
+    <p>
+      ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის
+      გაკეთება.
+    </p>
+  </CovidRegisterLink>
 </template>
 <script>
 import BaseRadio from "./BaseRadio.vue";

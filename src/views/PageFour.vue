@@ -3,7 +3,7 @@
   <div class="flex justify-center">
     <div class="flex max-w-[1520px] w-full justify-between">
       <PageFourForm />
-      <div class="w-[750px]">
+      <div class="w-[730px]">
         <img src="@/assets/images/page4_image.png" alt="illustration" />
       </div>
     </div>
