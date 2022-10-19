@@ -9,6 +9,9 @@ module.exports = {
         ap: ["Anonymous Pro", "monospace"],
         // 'Anonymous Pro', monospace;
       },
+      colors: {
+        kuro: "#232323",
+      },
     },
   },
   plugins: [],

@@ -6,7 +6,7 @@
       :placeholder="placeholder"
       type="text"
       onfocus="(this.type='date')"
-      class="px-3 py-5 border-[#232323] border-solid border-[1px] text-[#232323] mb-1 font-light focus:outline-none w-full h-12"
+      class="px-3 py-5 border-kuro border-solid border-[1px] text-kuro mb-1 font-light focus:outline-none w-full h-12"
     />
   </div>
 </template>

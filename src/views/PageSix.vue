@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#232323] h-screen flex justify-center items-center">
+  <div class="bg-kuro h-screen flex justify-center items-center">
     <p v-if="success" class="font-bold text-white tracking-widest text-[64px]">
       მადლობა
     </p>

@@ -4,7 +4,7 @@
       :name="name"
       type="radio"
       :value="value"
-      class="accent-[#232323] h-6 w-6"
+      class="accent-kuro h-6 w-6"
     />
     <p>{{ value }}</p>
   </div>

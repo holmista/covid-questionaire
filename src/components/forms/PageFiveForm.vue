@@ -28,7 +28,7 @@
       <label for="what_about_meetings_in_live"></label>
       <textarea
         name="what_about_meetings_in_live"
-        class="border-[1px] border-[#232323] p-2 w-[606px] mt-5"
+        class="border-[1px] border-kuro p-2 w-[606px] mt-5"
         rows="4"
         columns="50"
       ></textarea>
@@ -40,7 +40,7 @@
       <label for="tell_us_your_opinion_about_us"></label>
       <textarea
         name="tell_us_your_opinion_about_us"
-        class="border-[1px] border-[#232323] p-2 w-[606px] mt-5"
+        class="border-[1px] border-kuro p-2 w-[606px] mt-5"
         rows="4"
         columns="50"
       ></textarea>
