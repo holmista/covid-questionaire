@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap");
+
+@font-face {
+  font-family: "bpg-arial";
+  src: url("../public/fonts/bpg_arial_2009.ttf");
+}
+
+body {
+  font-family: "bpg-arial";
+}

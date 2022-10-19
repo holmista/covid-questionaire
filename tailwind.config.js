@@ -3,7 +3,13 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        ba: ["bpg-arial"],
+        ap: ["Anonymous Pro", "monospace"],
+        // 'Anonymous Pro', monospace;
+      },
+    },
   },
   plugins: [],
 };

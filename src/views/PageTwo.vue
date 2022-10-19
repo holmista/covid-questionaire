@@ -1,5 +1,5 @@
 <template>
-  <BaseHeader page="2" class="" />
+  <BaseHeader page="1" class="" />
   <div class="flex justify-center">
     <div class="flex max-w-[1520px] w-full justify-between">
       <PageTwoForm />

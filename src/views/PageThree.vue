@@ -1,5 +1,5 @@
 <template>
-  <BaseHeader page="3" class="" />
+  <BaseHeader page="2" class="" />
   <div class="flex justify-center">
     <div class="flex max-w-[1520px] w-full justify-between">
       <PageThreeForm />
