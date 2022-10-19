@@ -46,11 +46,13 @@
       ></textarea>
     </div>
     <div class="flex justify-end">
-      <button
-        class="bg-[#208298] w-44 h-14 rounded-[42px] text-white font-bold"
-      >
-        დასრულება
-      </button>
+      <router-link :to="{ name: 'thank_you_page' }">
+        <button
+          class="bg-[#208298] w-44 h-14 rounded-[42px] text-white font-bold"
+        >
+          დასრულება
+        </button>
+      </router-link>
     </div>
   </ValidationForm>
 </template>
