@@ -1,9 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import PageOne from "../views/PageOne.vue";
-import PageTwo from "../views/PageTwo.vue";
-import PageThree from "../views/PageThree.vue";
-import PageFour from "../views/PageFour.vue";
-import PageFive from "../views/PageFive.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,27 +6,32 @@ const router = createRouter({
     {
       path: "/1",
       name: "page-one",
-      component: PageOne,
+      component: () => import("../views/PageOne.vue"),
     },
     {
       path: "/2",
       name: "page-two",
-      component: PageTwo,
+      component: () => import("../views/PageTwo.vue"),
     },
     {
       path: "/3",
       name: "page-three",
-      component: PageThree,
+      component: () => import("../views/PageThree.vue"),
     },
     {
       path: "/4",
       name: "page-four",
-      component: PageFour,
+      component: () => import("../views/PageFour.vue"),
     },
     {
       path: "/5",
       name: "page-five",
-      component: PageFive,
+      component: () => import("../views/PageFive.vue"),
+    },
+    {
+      path: "/6",
+      name: "page-six",
+      component: () => import("../views/PageSix.vue"),
     },
     // {
     //   path: "/about",
