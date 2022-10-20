@@ -19,7 +19,7 @@ export default {
       required: true,
     },
     to: {
-      type: String,
+      type: Object,
       required: true,
     },
   },
