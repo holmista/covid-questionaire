@@ -7,21 +7,24 @@
       >
         <BaseInput
           kaName="სახელი"
-          name="name"
+          name="first_name"
           type="text"
           rules="required|min:3|max:256|alpha"
+          action="basicInformation/setFirstName"
         />
         <BaseInput
           kaName="გვარი"
-          name="surname"
+          name="last_name"
           type="text"
           rules="required|min:3"
+          action="basicInformation/setLastName"
         />
         <BaseInput
           kaName="იმეილი"
           name="email"
           type="email"
           rules="required|email|redberry_email"
+          action="basicInformation/setEmail"
         />
         <div class="absolute w-[1520px] bottom-12">
           <ForwardButton
@@ -51,8 +54,9 @@ export default {
       "setEmail",
     ]),
     onSubmit(values) {
-      this.setFirstName(values.name);
-      this.setLastName(values.surname);
+      console.log("submitted");
+      this.setFirstName(values.first_name);
+      this.setLastName(values.last_name);
       this.setEmail(values.email);
       console.log(
         this.$store.state.basicInformation.first_name,

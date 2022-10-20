@@ -1,10 +1,10 @@
 <template>
   <div v-if="active === 'yes'" class="flex justify-center">
-    <!-- <router-link :to="to"> -->
-    <button>
-      <DarkForward />
-    </button>
-    <!-- </router-link> -->
+    <router-link :to="to">
+      <button>
+        <DarkForward />
+      </button>
+    </router-link>
   </div>
   <div v-else class="flex justify-center">
     <LightForward />
