@@ -6,6 +6,7 @@
       :value="value"
       class="accent-kuro h-6 w-6"
       @click="handleClick"
+      v-model="val"
     />
     <p>{{ kaValue }}</p>
   </div>
@@ -21,7 +22,7 @@ export default {
       required: true,
     },
     value: {
-      type: String,
+      type: String || Boolean,
       required: true,
     },
     kaValue: {
@@ -32,6 +33,14 @@ export default {
       type: Function,
       required: true,
     },
+    state: {
+      required: true,
+    },
+  },
+  data() {
+    return {
+      val: this.state,
+    };
   },
   methods: {
     handleClick(e) {

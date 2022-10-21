@@ -3,25 +3,28 @@
     <ValidationForm v-slot="{ meta }" as="div">
       <form class="w-[513px] flex flex-col space-y-10">
         <BaseInput
-          kaName="სახელი"
+          kaName="სახელი*"
           name="first_name"
           type="text"
           rules="required|min:3|max:256|alpha"
-          action="basicInformation/setFirstName"
+          :action="setFirstName"
+          :state="first_name"
         />
         <BaseInput
-          kaName="გვარი"
+          kaName="გვარი*"
           name="last_name"
           type="text"
           rules="required|min:3"
-          action="basicInformation/setLastName"
+          :action="setLastName"
+          :state="last_name"
         />
         <BaseInput
-          kaName="იმეილი"
+          kaName="იმეილი*"
           name="email"
           type="email"
           rules="required|email|redberry_email"
-          action="basicInformation/setEmail"
+          :action="setEmail"
+          :state="email"
         />
         <div class="absolute w-[1520px] bottom-12">
           <ForwardButton
@@ -40,10 +43,13 @@ import { Form as ValidationForm } from "vee-validate";
 import BaseInput from "../form_elements/BaseInput.vue";
 import RequireFields from "./RequireFields.vue";
 import ForwardButton from "@/components/layout/ForwardButton.vue";
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 
 export default {
   components: { ValidationForm, BaseInput, RequireFields, ForwardButton },
+  computed: {
+    ...mapState("basicInformation", ["first_name", "last_name", "email"]),
+  },
   methods: {
     ...mapActions("basicInformation", [
       "setFirstName",

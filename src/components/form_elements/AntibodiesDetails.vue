@@ -4,15 +4,20 @@
       თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და ანტისხეულების
       რაოდენობა*
     </p>
-    <BaseDate name="test_date" placeholder="რიცხვი" />
+    <BaseDate
+      name="test_date"
+      placeholder="რიცხვი"
+      :action="setAntibodiesTestDate"
+      :state="antibodies_test_date"
+    />
     <div>
-      <label for="number"></label>
-      <Field
-        name="number"
+      <BaseInput
+        name="antibodies_test_number"
         type="number"
-        rules="required|numeric"
-        class="border-kuro border-solid border-[1px] py-2 px-5 h-12 text-lg text-kuro mb-1 font-light focus:outline-none w-full"
+        rules="required"
         placeholder="ანტისხეულების რაოდენობა"
+        :action="setAntibodiesTestNumber"
+        :state="antibodies_test_number"
       />
     </div>
   </div>
@@ -20,7 +25,9 @@
 
 <script>
 import BaseDate from "./BaseDate.vue";
-import { Field } from "vee-validate";
+// import { Field } from "vee-validate";
+import { mapActions, mapState } from "vuex";
+import BaseInput from "./BaseInput.vue";
 export default {
   props: {
     visible: {
@@ -28,6 +35,22 @@ export default {
       required: true,
     },
   },
-  components: { BaseDate, Field },
+  components: { BaseDate, BaseInput },
+  computed: {
+    ...mapState("covidInformation", [
+      "antibodies_test_date",
+      "antibodies_test_number",
+    ]),
+  },
+  methods: {
+    ...mapActions("covidInformation", [
+      "setAntibodiesTestDate",
+      "setAntibodiesTestNumber",
+    ]),
+    // setAntibodiesTestNumber(e) {
+    //   console.log(e.target.value);
+    //   // this.setAntibodiesTestNumber(e.target.value);
+    // },
+  },
 };
 </script>

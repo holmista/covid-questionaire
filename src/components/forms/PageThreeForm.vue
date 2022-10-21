@@ -7,8 +7,20 @@
           $store.state.covidInformation.had_covid === 'yes' ? 'yes' : 'no'
         "
       />
-      <AntibodiesDetails visible="no" />
-      <WhenHadCovid visible="yes" />
+      <AntibodiesDetails
+        :visible="
+          $store.state.covidInformation.had_antibody_test === 'true'
+            ? 'yes'
+            : 'no'
+        "
+      />
+      <WhenHadCovid
+        :visible="
+          $store.state.covidInformation.had_antibody_test === 'false'
+            ? 'yes'
+            : 'no'
+        "
+      />
     </form>
     <div class="absolute w-[1520px] bottom-12">
       <nav class="flex space-x-24 justify-center">

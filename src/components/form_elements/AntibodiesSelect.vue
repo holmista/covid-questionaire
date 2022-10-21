@@ -5,22 +5,24 @@
     </label>
     <BaseRadio
       name="had_antibody_test"
-      :value="true"
+      value="true"
       kaValue="კი"
       :action="setHadAntibodyTest"
+      :state="had_antibody_test"
     />
     <BaseRadio
       name="had_antibody_test"
-      :value="false"
+      value="false"
       kaValue="არა"
       :action="setHadAntibodyTest"
+      :state="had_antibody_test"
     />
   </div>
 </template>
 
 <script>
 import BaseRadio from "./BaseRadio.vue";
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   components: { BaseRadio },
   props: {
@@ -28,6 +30,9 @@ export default {
       type: String,
       required: true,
     },
+  },
+  computed: {
+    ...mapState("covidInformation", ["had_antibody_test"]),
   },
   methods: {
     ...mapActions("covidInformation", ["setHadAntibodyTest"]),
