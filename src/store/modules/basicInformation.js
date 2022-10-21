@@ -1,4 +1,4 @@
-const store = {
+export default {
   namespaced: true,
   state: () => ({
     first_name: "",
@@ -27,11 +27,4 @@ const store = {
       context.commit("email", payload);
     },
   },
-  //   getters: {
-  //     firstName: (state) => state.first_name,
-  //     lastName: (state) => state.last_name,
-  //     email: (state) => state.email,
-  //   },
 };
-
-export default store;

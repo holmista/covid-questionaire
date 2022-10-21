@@ -5,8 +5,9 @@
       type="radio"
       :value="value"
       class="accent-kuro h-6 w-6"
+      @click="handleClick"
     />
-    <p>{{ value }}</p>
+    <p>{{ kaValue }}</p>
   </div>
 </template>
 
@@ -22,6 +23,19 @@ export default {
     value: {
       type: String,
       required: true,
+    },
+    kaValue: {
+      type: String,
+      required: true,
+    },
+    action: {
+      type: Function,
+      required: true,
+    },
+  },
+  methods: {
+    handleClick(e) {
+      this.action(e.target.value);
     },
   },
 };

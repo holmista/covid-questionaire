@@ -6,24 +6,39 @@
     <BaseRadio
       kaName="გაქვს გადატანილი Covid-19?*"
       name="had_covid"
-      value="კი"
+      value="yes"
+      kaValue="კი"
+      :action="setHadCovid"
     />
     <BaseRadio
       kaName="გაქვს გადატანილი Covid-19?*"
       name="had_covid"
-      value="არა"
+      value="no"
+      kaValue="არა"
+      :action="setHadCovid"
     />
     <BaseRadio
       kaName="გაქვს გადატანილი Covid-19?*"
       name="had_covid"
-      value="ახლა მაქვს"
+      value="currently"
+      kaValue="ახლა მაქვს"
+      :action="setHadCovid"
     />
   </div>
 </template>
 
 <script>
 import BaseRadio from "./BaseRadio.vue";
+import { mapActions } from "vuex";
 export default {
   components: { BaseRadio },
+  data() {
+    return {
+      value: "",
+    };
+  },
+  methods: {
+    ...mapActions("covidInformation", ["setHadCovid"]),
+  },
 };
 </script>

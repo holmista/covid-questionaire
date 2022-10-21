@@ -1,10 +1,7 @@
 <template>
   <div class="flex flex-col">
-    <ValidationForm v-slot="{ meta, handleSubmit }" as="div">
-      <form
-        @submit="handleSubmit($event, onSubmit)"
-        class="w-[513px] flex flex-col space-y-10"
-      >
+    <ValidationForm v-slot="{ meta }" as="div">
+      <form class="w-[513px] flex flex-col space-y-10">
         <BaseInput
           kaName="სახელი"
           name="first_name"
@@ -53,17 +50,6 @@ export default {
       "setLastName",
       "setEmail",
     ]),
-    onSubmit(values) {
-      console.log("submitted");
-      this.setFirstName(values.first_name);
-      this.setLastName(values.last_name);
-      this.setEmail(values.email);
-      console.log(
-        this.$store.state.basicInformation.first_name,
-        this.$store.state.basicInformation.last_name,
-        this.$store.state.basicInformation.email
-      );
-    },
   },
 };
 </script>

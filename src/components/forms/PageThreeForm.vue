@@ -2,7 +2,11 @@
   <ValidationForm v-slot="{ meta }" as="div">
     <form class="w-[513px] flex flex-col space-y-10">
       <HadCovidSelect />
-      <AntibodiesSelect visible="yes" />
+      <AntibodiesSelect
+        :visible="
+          $store.state.covidInformation.had_covid === 'yes' ? 'yes' : 'no'
+        "
+      />
       <AntibodiesDetails visible="no" />
       <WhenHadCovid visible="yes" />
     </form>
