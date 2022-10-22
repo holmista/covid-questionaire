@@ -3,14 +3,41 @@
     <label for="waiting_for" class="text-xl font-bold">რას ელოდები?* </label>
     <BaseRadio
       name="waiting_for"
-      value="დარეგისტრირებული ვარ და ველოდები რიცხვს"
+      kaValue="დარეგისტრირებული ვარ და ველოდები რიცხვს"
+      value="registered_and_waiting_for_date"
+      :action="setWaitingFor"
+      :state="waiting_for"
     />
-    <BaseRadio name="waiting_for" value="არ ვგეგმავ" />
-    <BaseRadio name="waiting_for" value="გადატანილი მაქვს და ვგეგმავ აცრას" />
+    <BaseRadio
+      name="waiting_for"
+      kaValue="არ ვგეგმავ"
+      value="not_planning"
+      :action="setWaitingFor"
+      :state="waiting_for"
+    />
+    <BaseRadio
+      name="waiting_for"
+      kaValue="გადატანილი მაქვს და ვგეგმავ აცრას"
+      value="had_and_planning"
+      :action="setWaitingFor"
+      :state="waiting_for"
+    />
   </div>
-  <RegisterNow visible="no" class="ml-8" />
-  <CovidRegisterLink visible="no" class="ml-8" />
-  <CovidRegisterLink visible="yes" class="ml-8 max-w-[400px]">
+  <!-- <RegisterNow visible="no" class="ml-8" /> -->
+  <CovidRegisterLink
+    class="ml-8"
+    :visible="
+      waiting_for === 'not_planning' && had_vaccine === 'false' ? 'yes' : 'no'
+    "
+  />
+  <CovidRegisterLink
+    :visible="
+      waiting_for === 'had_and_planning' && had_vaccine === 'false'
+        ? 'yes'
+        : 'no'
+    "
+    class="ml-8 max-w-[400px]"
+  >
     <p>
       ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის
       გაკეთება.
@@ -21,6 +48,7 @@
 import BaseRadio from "./BaseRadio.vue";
 import RegisterNow from "./RegisterNow.vue";
 import CovidRegisterLink from "./CovidRegisterLink.vue";
+import { mapActions, mapState } from "vuex";
 export default {
   components: { BaseRadio, RegisterNow, CovidRegisterLink },
   props: {
@@ -28,6 +56,12 @@ export default {
       type: String,
       required: true,
     },
+  },
+  computed: {
+    ...mapState("vaccinationInformation", ["waiting_for", "had_vaccine"]),
+  },
+  methods: {
+    ...mapActions("vaccinationInformation", ["setWaitingFor"]),
   },
 };
 </script>

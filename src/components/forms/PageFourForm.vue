@@ -9,13 +9,13 @@
             : 'no'
         "
       />
-      <!-- <WhatWaitingFor
+      <WhatWaitingFor
         :visible="
           $store.state.vaccinationInformation.had_vaccine === 'false'
             ? 'yes'
             : 'no'
         "
-      /> -->
+      />
     </form>
 
     <div class="absolute w-[1520px] bottom-12">

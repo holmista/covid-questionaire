@@ -28,8 +28,8 @@
   <RegisterNow
     class="ml-8"
     :visible="
-      $store.state.vaccinationInformation.vaccination_stage ===
-      'first_dosage_and_not_registered_on_the_second'
+      vaccination_stage === 'first_dosage_and_not_registered_on_the_second' &&
+      had_vaccine === 'true'
         ? 'yes'
         : 'no'
     "
@@ -48,7 +48,7 @@ export default {
     },
   },
   computed: {
-    ...mapState("vaccinationInformation", ["vaccination_stage"]),
+    ...mapState("vaccinationInformation", ["vaccination_stage", "had_vaccine"]),
   },
   methods: {
     ...mapActions("vaccinationInformation", ["setVaccinationStage"]),
