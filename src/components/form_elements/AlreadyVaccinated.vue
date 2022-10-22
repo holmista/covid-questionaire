@@ -25,7 +25,7 @@ import { mapActions, mapState } from "vuex";
 export default {
   components: { BaseRadio },
   computed: {
-    ...mapState("covidInformation", ["had_vaccine"]),
+    ...mapState("vaccinationInformation", ["had_vaccine"]),
   },
   methods: {
     ...mapActions("vaccinationInformation", ["setHadVaccine"]),
