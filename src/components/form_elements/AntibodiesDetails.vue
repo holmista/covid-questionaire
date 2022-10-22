@@ -5,7 +5,7 @@
       რაოდენობა*
     </p>
     <BaseDate
-      name="test_date"
+      name="antibodies_test_date"
       placeholder="რიცხვი"
       :action="setAntibodiesTestDate"
       :state="antibodies_test_date"

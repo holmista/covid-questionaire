@@ -15,12 +15,5 @@ import PageThreeForm from "@/components/forms/PageThreeForm.vue";
 
 export default {
   components: { PageThreeForm },
-  mounted() {
-    console.log(
-      this.$store.state.basicInformation.first_name,
-      this.$store.state.basicInformation.last_name,
-      this.$store.state.basicInformation.email
-    );
-  },
 };
 </script>

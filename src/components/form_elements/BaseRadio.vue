@@ -4,6 +4,7 @@
       :name="name"
       type="radio"
       :value="value"
+      rules="required"
       class="accent-kuro h-6 w-6"
       @click="handleClick"
       v-model="val"
@@ -28,6 +29,10 @@ export default {
     kaValue: {
       type: String,
       required: true,
+    },
+    rules: {
+      type: String,
+      required: false,
     },
     action: {
       type: Function,
