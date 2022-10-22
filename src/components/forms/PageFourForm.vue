@@ -2,8 +2,20 @@
   <ValidationForm v-slot="{ meta }" as="div">
     <form class="w-[513px] flex flex-col space-y-10">
       <AlreadyVaccinated />
-      <VaccinationStage visible="no" />
-      <WhatWaitingFor visible="yes" />
+      <VaccinationStage
+        :visible="
+          $store.state.vaccinationInformation.had_vaccine === 'true'
+            ? 'yes'
+            : 'no'
+        "
+      />
+      <!-- <WhatWaitingFor
+        :visible="
+          $store.state.vaccinationInformation.had_vaccine === 'false'
+            ? 'yes'
+            : 'no'
+        "
+      /> -->
     </form>
 
     <div class="absolute w-[1520px] bottom-12">

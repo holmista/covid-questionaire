@@ -5,19 +5,40 @@
     </label>
     <BaseRadio
       name="vaccination_stage"
-      value="პირველი დოზა და დარეგისტრირებული ვარ მეორეზე"
+      value="first_dosage_and_registered_on_the_second"
+      kaValue="პირველი დოზა და დარეგისტრირებული ვარ მეორეზე"
+      :action="setVaccinationStage"
+      :state="vaccination_stage"
     />
-    <BaseRadio name="vaccination_stage" value="სრულად აცრილი ვარ" />
     <BaseRadio
       name="vaccination_stage"
-      value="პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე"
+      value="completely_vaccinated"
+      kaValue="სრულად აცრილი ვარ"
+      :action="setVaccinationStage"
+      :state="vaccination_stage"
+    />
+    <BaseRadio
+      name="vaccination_stage"
+      value="first_dosage_and_not_registered_on_the_second"
+      kaValue="პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე"
+      :action="setVaccinationStage"
+      :state="vaccination_stage"
     />
   </div>
-  <RegisterNow visible="no" />
+  <RegisterNow
+    class="ml-8"
+    :visible="
+      $store.state.vaccinationInformation.vaccination_stage ===
+      'first_dosage_and_not_registered_on_the_second'
+        ? 'yes'
+        : 'no'
+    "
+  />
 </template>
 <script>
 import BaseRadio from "./BaseRadio.vue";
 import RegisterNow from "./RegisterNow.vue";
+import { mapActions, mapState } from "vuex";
 export default {
   components: { BaseRadio, RegisterNow },
   props: {
@@ -25,6 +46,12 @@ export default {
       type: String,
       required: true,
     },
+  },
+  computed: {
+    ...mapState("vaccinationInformation", ["vaccination_stage"]),
+  },
+  methods: {
+    ...mapActions("vaccinationInformation", ["setVaccinationStage"]),
   },
 };
 </script>
