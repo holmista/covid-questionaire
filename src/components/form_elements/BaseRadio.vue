@@ -8,7 +8,7 @@
       class="accent-kuro h-6 w-6"
       v-model="val"
     /> -->
-    <Field v-slot="{ handleChange, handleBlur }" :name="name" rules="required">
+    <!-- <Field v-slot="{ handleChange, handleBlur }" :name="name" rules="required">
       <input
         type="radio"
         :name="name"
@@ -19,7 +19,15 @@
         @change="handleChange"
         @blur="handleBlur"
       />
-    </Field>
+    </Field> -->
+    <Field
+      type="radio"
+      :name="name"
+      :value="value"
+      v-model="val"
+      rules="required"
+      class="accent-kuro h-6 w-6"
+    />
     <p>{{ kaValue }}</p>
   </div>
 </template>
@@ -53,14 +61,14 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      val: this.$store.state[this.module][this.state],
-    };
-  },
-  methods: {
-    change(e) {
-      this.$store.dispatch(`${this.module}/${this.action}`, e.target.value);
+  computed: {
+    val: {
+      set(val) {
+        this.$store.dispatch(`${this.module}/${this.action}`, val);
+      },
+      get() {
+        return this.$store.state[this.module][this.state];
+      },
     },
   },
 };

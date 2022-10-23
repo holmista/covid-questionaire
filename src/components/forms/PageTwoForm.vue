@@ -28,7 +28,7 @@
         />
         <div class="absolute w-[1520px] bottom-12">
           <ForwardButton
-            :active="meta.valid && meta.touched ? 'yes' : 'no'"
+            :active="meta.valid ? 'yes' : 'no'"
             :to="{ name: 'covid_information_page' }"
           />
         </div>
