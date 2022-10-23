@@ -7,15 +7,17 @@
       name="had_vaccine"
       value="true"
       kaValue="კი"
-      :action="setHadVaccine"
-      :state="had_vaccine"
+      action="setHadVaccine"
+      state="had_vaccine"
+      module="vaccinationInformation"
     />
     <BaseRadio
       name="had_vaccine"
       value="false"
       kaValue="არა"
-      :action="setHadVaccine"
-      :state="had_vaccine"
+      action="setHadVaccine"
+      state="had_vaccine"
+      module="vaccinationInformation"
     />
   </div>
 </template>

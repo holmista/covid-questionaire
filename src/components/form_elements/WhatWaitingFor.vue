@@ -5,25 +5,27 @@
       name="waiting_for"
       kaValue="დარეგისტრირებული ვარ და ველოდები რიცხვს"
       value="registered_and_waiting_for_date"
-      :action="setWaitingFor"
-      :state="waiting_for"
+      action="setWaitingFor"
+      state="waiting_for"
+      module="vaccinationInformation"
     />
     <BaseRadio
       name="waiting_for"
       kaValue="არ ვგეგმავ"
       value="not_planning"
-      :action="setWaitingFor"
-      :state="waiting_for"
+      action="setWaitingFor"
+      state="waiting_for"
+      module="vaccinationInformation"
     />
     <BaseRadio
       name="waiting_for"
       kaValue="გადატანილი მაქვს და ვგეგმავ აცრას"
       value="had_and_planning"
-      :action="setWaitingFor"
-      :state="waiting_for"
+      action="setWaitingFor"
+      state="waiting_for"
+      module="vaccinationInformation"
     />
   </div>
-  <!-- <RegisterNow visible="no" class="ml-8" /> -->
   <CovidRegisterLink
     class="ml-8"
     :visible="
@@ -46,11 +48,10 @@
 </template>
 <script>
 import BaseRadio from "./BaseRadio.vue";
-import RegisterNow from "./RegisterNow.vue";
 import CovidRegisterLink from "./CovidRegisterLink.vue";
 import { mapActions, mapState } from "vuex";
 export default {
-  components: { BaseRadio, RegisterNow, CovidRegisterLink },
+  components: { BaseRadio, CovidRegisterLink },
   props: {
     visible: {
       type: String,

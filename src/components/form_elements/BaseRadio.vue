@@ -1,14 +1,25 @@
 <template>
   <div class="flex space-x-2">
-    <Field
+    <!-- <Field
       :name="name"
       type="radio"
       :value="value"
       rules="required"
       class="accent-kuro h-6 w-6"
-      @click="handleClick"
       v-model="val"
-    />
+    /> -->
+    <Field v-slot="{ handleChange, handleBlur }" :name="name" rules="required">
+      <input
+        type="radio"
+        :name="name"
+        :value="value"
+        :checked="value === this.$store.state[this.module][this.state]"
+        class="accent-kuro h-6 w-6"
+        @click="change"
+        @change="handleChange"
+        @blur="handleBlur"
+      />
+    </Field>
     <p>{{ kaValue }}</p>
   </div>
 </template>
@@ -30,26 +41,26 @@ export default {
       type: String,
       required: true,
     },
-    rules: {
-      type: String,
-      required: false,
-    },
+
     action: {
-      type: Function,
+      type: String,
       required: true,
     },
     state: {
       required: true,
     },
+    module: {
+      required: true,
+    },
   },
   data() {
     return {
-      val: this.state,
+      val: this.$store.state[this.module][this.state],
     };
   },
   methods: {
-    handleClick(e) {
-      this.action(e.target.value);
+    change(e) {
+      this.$store.dispatch(`${this.module}/${this.action}`, e.target.value);
     },
   },
 };

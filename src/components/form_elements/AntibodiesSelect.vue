@@ -7,15 +7,17 @@
       name="had_antibody_test"
       value="true"
       kaValue="კი"
-      :action="setHadAntibodyTest"
-      :state="had_antibody_test"
+      action="setHadAntibodyTest"
+      state="had_antibody_test"
+      module="covidInformation"
     />
     <BaseRadio
       name="had_antibody_test"
       value="false"
       kaValue="არა"
-      :action="setHadAntibodyTest"
-      :state="had_antibody_test"
+      action="setHadAntibodyTest"
+      state="had_antibody_test"
+      module="covidInformation"
     />
   </div>
 </template>

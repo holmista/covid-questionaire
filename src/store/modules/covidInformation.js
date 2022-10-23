@@ -11,9 +11,18 @@ export default {
   mutations: {
     setHadCovid(state, payload) {
       state.had_covid = payload;
+      state.had_antibody_test = null;
+      state.antibodies = {};
+      state.had_covid_date = null;
+      state.antibodies_test_date = null;
+      state.antibodies_test_number = null;
     },
     setHadAntibodyTest(state, payload) {
       state.had_antibody_test = payload;
+      state.antibodies = {};
+      state.had_covid_date = null;
+      state.antibodies_test_date = null;
+      state.antibodies_test_number = null;
     },
     setAntibodies(state, payload) {
       state.antibodies = payload;

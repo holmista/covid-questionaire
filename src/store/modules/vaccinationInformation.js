@@ -8,6 +8,8 @@ export default {
   mutations: {
     setHadVaccine(state, payload) {
       state.had_vaccine = payload;
+      state.vaccination_stage = null;
+      state.waiting_for = null;
     },
     setVaccinationStage(state, payload) {
       state.vaccination_stage = payload;

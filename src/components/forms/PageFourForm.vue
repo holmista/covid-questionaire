@@ -22,7 +22,7 @@
       <nav class="flex space-x-24 justify-center">
         <BackButton :to="{ name: 'covid_information_page' }" />
         <ForwardButton
-          :active="meta.valid && meta.touched ? 'yes' : 'no'"
+          :active="meta.valid ? 'yes' : 'no'"
           :to="{ name: 'office_information_page' }"
         />
       </nav>

@@ -8,24 +8,27 @@
       name="had_covid"
       value="yes"
       kaValue="კი"
-      :action="setHadCovid"
-      :state="had_covid"
+      action="setHadCovid"
+      state="had_covid"
+      module="covidInformation"
     />
     <BaseRadio
       kaName="გაქვს გადატანილი Covid-19?*"
       name="had_covid"
       value="no"
       kaValue="არა"
-      :action="setHadCovid"
-      :state="had_covid"
+      action="setHadCovid"
+      state="had_covid"
+      module="covidInformation"
     />
     <BaseRadio
       kaName="გაქვს გადატანილი Covid-19?*"
       name="had_covid"
       value="currently"
       kaValue="ახლა მაქვს"
-      :action="setHadCovid"
-      :state="had_covid"
+      action="setHadCovid"
+      state="had_covid"
+      module="covidInformation"
     />
   </div>
 </template>
