@@ -25,7 +25,6 @@
 
 <script>
 import BaseDate from "./BaseDate.vue";
-// import { Field } from "vee-validate";
 import { mapActions, mapState } from "vuex";
 import BaseInput from "./BaseInput.vue";
 export default {
@@ -47,10 +46,6 @@ export default {
       "setAntibodiesTestDate",
       "setAntibodiesTestNumber",
     ]),
-    // setAntibodiesTestNumber(e) {
-    //   console.log(e.target.value);
-    //   // this.setAntibodiesTestNumber(e.target.value);
-    // },
   },
 };
 </script>

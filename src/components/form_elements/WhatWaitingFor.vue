@@ -1,16 +1,16 @@
 <template>
   <div v-if="visible === 'yes'" class="flex flex-col space-y-3">
-    <label for="waiting_for" class="text-xl font-bold">რას ელოდები?* </label>
+    <label for="i_am_waiting" class="text-xl font-bold">რას ელოდები?* </label>
     <BaseRadio
-      name="waiting_for"
+      name="i_am_waiting"
       kaValue="დარეგისტრირებული ვარ და ველოდები რიცხვს"
-      value="registered_and_waiting_for_date"
+      value="registered_and_waiting"
       action="setWaitingFor"
       state="waiting_for"
       module="vaccinationInformation"
     />
     <BaseRadio
-      name="waiting_for"
+      name="i_am_waiting"
       kaValue="არ ვგეგმავ"
       value="not_planning"
       action="setWaitingFor"
@@ -18,9 +18,9 @@
       module="vaccinationInformation"
     />
     <BaseRadio
-      name="waiting_for"
+      name="i_am_waiting"
       kaValue="გადატანილი მაქვს და ვგეგმავ აცრას"
-      value="had_and_planning"
+      value="had_covid_and_planning_to_be_vaccinated"
       action="setWaitingFor"
       state="waiting_for"
       module="vaccinationInformation"
@@ -34,7 +34,8 @@
   />
   <CovidRegisterLink
     :visible="
-      waiting_for === 'had_and_planning' && had_vaccine === 'false'
+      waiting_for === 'had_covid_and_planning_to_be_vaccinated' &&
+      had_vaccine === 'false'
         ? 'yes'
         : 'no'
     "

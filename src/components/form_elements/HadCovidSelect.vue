@@ -24,7 +24,7 @@
     <BaseRadio
       kaName="გაქვს გადატანილი Covid-19?*"
       name="had_covid"
-      value="currently"
+      value="have_right_now"
       kaValue="ახლა მაქვს"
       action="setHadCovid"
       state="had_covid"

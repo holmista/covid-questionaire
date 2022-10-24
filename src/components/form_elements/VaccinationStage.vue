@@ -13,7 +13,7 @@
     />
     <BaseRadio
       name="vaccination_stage"
-      value="completely_vaccinated"
+      value="fully_vaccinated"
       kaValue="სრულად აცრილი ვარ"
       action="setVaccinationStage"
       state="vaccination_stage"
@@ -21,8 +21,8 @@
     />
     <BaseRadio
       name="vaccination_stage"
-      value="first_dosage_and_not_registered_on_the_second"
-      kaValue="პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე"
+      value="first_dosage_and_not_registered_yet"
+      kaValue="პირველი დოზა და არ დავრეგისტრირებული ვარ მეორეზე"
       action="setVaccinationStage"
       state="vaccination_stage"
       module="vaccinationInformation"
@@ -31,7 +31,7 @@
   <RegisterNow
     class="ml-8"
     :visible="
-      vaccination_stage === 'first_dosage_and_not_registered_on_the_second' &&
+      vaccination_stage === 'first_dosage_and_not_registered_yet' &&
       had_vaccine === 'true'
         ? 'yes'
         : 'no'

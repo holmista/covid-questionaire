@@ -27,6 +27,7 @@
       v-model="val"
       rules="required"
       class="accent-kuro h-6 w-6"
+      :ref="`radio-${name}`"
     />
     <p>{{ kaValue }}</p>
   </div>
@@ -42,7 +43,7 @@ export default {
       required: true,
     },
     value: {
-      type: String || Boolean,
+      type: [String, Boolean, Number],
       required: true,
     },
     kaValue: {
@@ -70,6 +71,9 @@ export default {
         return this.$store.state[this.module][this.state];
       },
     },
+  },
+  beforeUnmount() {
+    this.$refs[`radio-${this.name}`].reset();
   },
 };
 </script>

@@ -4,7 +4,7 @@
       მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*
     </p>
     <BaseDate
-      name="test_date"
+      name="covid_sickness_date"
       placeholder="დდ/თთ/წწ"
       :action="setHadCovidDate"
       :state="had_covid_date"

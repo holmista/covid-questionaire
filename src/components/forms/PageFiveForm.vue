@@ -27,7 +27,7 @@
       />
       <BaseRadio
         name="non_formal_meetings"
-        value="once_two_weeks"
+        value="once_in_a_two_weeks"
         kaValue="ორ კვირაში ერთხელ"
         action="setNonFormalMeetings"
         state="non_formal_meetings"
@@ -35,7 +35,7 @@
       />
       <BaseRadio
         name="non_formal_meetings"
-        value="once_a_month"
+        value="once_in_a_month"
         kaValue="თვეში ერთხელ"
         action="setNonFormalMeetings"
         state="non_formal_meetings"
@@ -49,7 +49,7 @@
       <label for="number_of_days_from_office"></label>
       <BaseRadio
         name="number_of_days_from_office"
-        value="0"
+        :value="0"
         kaValue="0"
         action="setNumberOfDaysFromOffice"
         state="number_of_days_from_office"
@@ -57,7 +57,7 @@
       />
       <BaseRadio
         name="number_of_days_from_office"
-        value="1"
+        :value="1"
         kaValue="1"
         action="setNumberOfDaysFromOffice"
         state="number_of_days_from_office"
@@ -65,7 +65,7 @@
       />
       <BaseRadio
         name="number_of_days_from_office"
-        value="2"
+        :value="2"
         kaValue="2"
         action="setNumberOfDaysFromOffice"
         state="number_of_days_from_office"
@@ -73,7 +73,7 @@
       />
       <BaseRadio
         name="number_of_days_from_office"
-        value="3"
+        :value="3"
         kaValue="3"
         action="setNumberOfDaysFromOffice"
         state="number_of_days_from_office"
@@ -81,7 +81,7 @@
       />
       <BaseRadio
         name="number_of_days_from_office"
-        value="4"
+        :value="4"
         kaValue="4"
         action="setNumberOfDaysFromOffice"
         state="number_of_days_from_office"
@@ -89,7 +89,7 @@
       />
       <BaseRadio
         name="number_of_days_from_office"
-        value="5"
+        :value="5"
         kaValue="5"
         action="setNumberOfDaysFromOffice"
         state="number_of_days_from_office"

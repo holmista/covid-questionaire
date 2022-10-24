@@ -21,6 +21,7 @@
     />
   </div>
 </template>
+
 <script>
 import BaseRadio from "./BaseRadio.vue";
 import { mapActions, mapState } from "vuex";

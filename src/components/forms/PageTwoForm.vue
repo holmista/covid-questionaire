@@ -6,7 +6,7 @@
           kaName="სახელი*"
           name="first_name"
           type="text"
-          rules="required|min:3|max:256|alpha"
+          rules="required|min:2|max:256|alpha"
           :action="setFirstName"
           :state="first_name"
         />
@@ -14,7 +14,7 @@
           kaName="გვარი*"
           name="last_name"
           type="text"
-          rules="required|min:3"
+          rules="required|min:2|max:256|alpha"
           :action="setLastName"
           :state="last_name"
         />
