@@ -199,12 +199,9 @@ export default {
       }
       data = this.strToBool(this.romoveNulls(data));
       try {
-        const res = await axios.post(
-          "https://covid19.devtest.ge/api/create",
-          data
-        );
-        console.log(res.status);
+        await axios.post("https://covid19.devtest.ge/api/create", data);
         this.formSentSuccessfully = true;
+        this.$router.push({ name: "thank_you_page" });
       } catch (e) {
         console.log(e);
         this.formSentSuccessfully = false;
