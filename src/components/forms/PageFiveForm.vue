@@ -104,6 +104,7 @@
         class="border-[1px] border-kuro p-2 w-[606px] mt-5"
         rows="4"
         columns="50"
+        v-model="liveMeetings"
       ></textarea>
     </div>
     <div>
@@ -116,6 +117,7 @@
         class="border-[1px] border-kuro p-2 w-[606px] mt-5"
         rows="4"
         columns="50"
+        v-model="aboutUs"
       ></textarea>
     </div>
     <div class="flex justify-end">
@@ -140,6 +142,31 @@ export default {
   components: {
     ValidationForm,
     BaseRadio,
+  },
+  computed: {
+    liveMeetings: {
+      get() {
+        return this.$store.state.officeInformation.what_about_meetings_in_live;
+      },
+      set(value) {
+        this.$store.commit(
+          "officeInformation/setWhatAboutMeetingsInLive",
+          value
+        );
+      },
+    },
+    aboutUs: {
+      get() {
+        return this.$store.state.officeInformation
+          .tell_us_your_opinion_about_us;
+      },
+      set(value) {
+        this.$store.commit(
+          "officeInformation/setTellUsYourOpinionAboutUs",
+          value
+        );
+      },
+    },
   },
   methods: {
     sendForm() {
