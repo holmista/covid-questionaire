@@ -10,7 +10,7 @@ export default {
   components: { DarkBack },
   props: {
     to: {
-      type: String,
+      type: Object,
       required: true,
     },
   },

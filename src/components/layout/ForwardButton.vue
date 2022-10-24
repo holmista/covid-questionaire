@@ -1,7 +1,9 @@
 <template>
   <div v-if="active === 'yes'" class="flex justify-center">
     <router-link :to="to">
-      <DarkForward />
+      <button>
+        <DarkForward />
+      </button>
     </router-link>
   </div>
   <div v-else class="flex justify-center">
@@ -19,7 +21,7 @@ export default {
       required: true,
     },
     to: {
-      type: String,
+      type: Object,
       required: true,
     },
   },

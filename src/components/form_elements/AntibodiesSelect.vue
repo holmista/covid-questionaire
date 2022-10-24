@@ -1,15 +1,30 @@
 <template>
   <div v-if="visible === 'yes'" class="flex flex-col space-y-3">
-    <label for="antibodies" class="font-bold text-xl"
+    <label for="had_antibody_test" class="font-bold text-xl"
       >ანტისხეულების ტესტი გაქვს გაკეთებული?*
     </label>
-    <BaseRadio name="antibodies" value="კი" />
-    <BaseRadio name="antibodies" value="არა" />
+    <BaseRadio
+      name="had_antibody_test"
+      value="true"
+      kaValue="კი"
+      action="setHadAntibodyTest"
+      state="had_antibody_test"
+      module="covidInformation"
+    />
+    <BaseRadio
+      name="had_antibody_test"
+      value="false"
+      kaValue="არა"
+      action="setHadAntibodyTest"
+      state="had_antibody_test"
+      module="covidInformation"
+    />
   </div>
 </template>
 
 <script>
 import BaseRadio from "./BaseRadio.vue";
+import { mapActions, mapState } from "vuex";
 export default {
   components: { BaseRadio },
   props: {
@@ -17,6 +32,12 @@ export default {
       type: String,
       required: true,
     },
+  },
+  computed: {
+    ...mapState("covidInformation", ["had_antibody_test"]),
+  },
+  methods: {
+    ...mapActions("covidInformation", ["setHadAntibodyTest"]),
   },
 };
 </script>

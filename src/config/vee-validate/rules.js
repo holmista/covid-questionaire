@@ -7,5 +7,5 @@ defineRule("min", min);
 defineRule("max", max);
 defineRule("alpha", alpha);
 defineRule("redberry_email", (value) => {
-  return value.endsWith("@redberry.com");
+  return value.endsWith("@redberry.ge");
 });

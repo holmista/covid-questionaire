@@ -1,16 +1,46 @@
 <template>
   <div v-if="visible === 'yes'" class="flex flex-col space-y-3">
-    <label for="waiting_for" class="text-xl font-bold">რას ელოდები?* </label>
+    <label for="i_am_waiting" class="text-xl font-bold">რას ელოდები?* </label>
     <BaseRadio
-      name="waiting_for"
-      value="დარეგისტრირებული ვარ და ველოდები რიცხვს"
+      name="i_am_waiting"
+      kaValue="დარეგისტრირებული ვარ და ველოდები რიცხვს"
+      value="registered_and_waiting"
+      action="setWaitingFor"
+      state="waiting_for"
+      module="vaccinationInformation"
     />
-    <BaseRadio name="waiting_for" value="არ ვგეგმავ" />
-    <BaseRadio name="waiting_for" value="გადატანილი მაქვს და ვგეგმავ აცრას" />
+    <BaseRadio
+      name="i_am_waiting"
+      kaValue="არ ვგეგმავ"
+      value="not_planning"
+      action="setWaitingFor"
+      state="waiting_for"
+      module="vaccinationInformation"
+    />
+    <BaseRadio
+      name="i_am_waiting"
+      kaValue="გადატანილი მაქვს და ვგეგმავ აცრას"
+      value="had_covid_and_planning_to_be_vaccinated"
+      action="setWaitingFor"
+      state="waiting_for"
+      module="vaccinationInformation"
+    />
   </div>
-  <RegisterNow visible="no" class="ml-8" />
-  <CovidRegisterLink visible="no" class="ml-8" />
-  <CovidRegisterLink visible="yes" class="ml-8 max-w-[400px]">
+  <CovidRegisterLink
+    class="ml-8"
+    :visible="
+      waiting_for === 'not_planning' && had_vaccine === 'false' ? 'yes' : 'no'
+    "
+  />
+  <CovidRegisterLink
+    :visible="
+      waiting_for === 'had_covid_and_planning_to_be_vaccinated' &&
+      had_vaccine === 'false'
+        ? 'yes'
+        : 'no'
+    "
+    class="ml-8 max-w-[400px]"
+  >
     <p>
       ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის
       გაკეთება.
@@ -19,15 +49,21 @@
 </template>
 <script>
 import BaseRadio from "./BaseRadio.vue";
-import RegisterNow from "./RegisterNow.vue";
 import CovidRegisterLink from "./CovidRegisterLink.vue";
+import { mapActions, mapState } from "vuex";
 export default {
-  components: { BaseRadio, RegisterNow, CovidRegisterLink },
+  components: { BaseRadio, CovidRegisterLink },
   props: {
     visible: {
       type: String,
       required: true,
     },
+  },
+  computed: {
+    ...mapState("vaccinationInformation", ["waiting_for", "had_vaccine"]),
+  },
+  methods: {
+    ...mapActions("vaccinationInformation", ["setWaitingFor"]),
   },
 };
 </script>

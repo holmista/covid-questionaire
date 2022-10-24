@@ -1,27 +1,100 @@
 <template>
-  <ValidationForm class="max-w-[606px] flex flex-col space-y-14">
+  <ValidationForm
+    class="max-w-[606px] flex flex-col space-y-14"
+    v-slot="{ meta }"
+  >
     <div class="flex flex-col space-y-4">
       <p class="font-bold text-xl">
         რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები,
         სადაც ყველა სურვილისამებრ ჩაერთვება?*
       </p>
       <label for="non_formal_meetings"></label>
-      <BaseRadio name="non_formal_meetings" value="კვირაში ორჯერ" />
-      <BaseRadio name="non_formal_meetings" value="კვირაში ერთხელ" />
-      <BaseRadio name="non_formal_meetings" value="ორ კვირაში ერთხელ" />
-      <BaseRadio name="non_formal_meetings" value="თვეში ერთხელ" />
+      <BaseRadio
+        name="non_formal_meetings"
+        value="twice_a_week"
+        kaValue="კვირაში ორჯერ"
+        action="setNonFormalMeetings"
+        state="non_formal_meetings"
+        module="officeInformation"
+      />
+      <BaseRadio
+        name="non_formal_meetings"
+        value="once_a_week"
+        kaValue="კვირაში ერთხელ"
+        action="setNonFormalMeetings"
+        state="non_formal_meetings"
+        module="officeInformation"
+      />
+      <BaseRadio
+        name="non_formal_meetings"
+        value="once_in_a_two_weeks"
+        kaValue="ორ კვირაში ერთხელ"
+        action="setNonFormalMeetings"
+        state="non_formal_meetings"
+        module="officeInformation"
+      />
+      <BaseRadio
+        name="non_formal_meetings"
+        value="once_in_a_month"
+        kaValue="თვეში ერთხელ"
+        action="setNonFormalMeetings"
+        state="non_formal_meetings"
+        module="officeInformation"
+      />
     </div>
     <div class="flex flex-col space-y-4">
       <p class="font-bold text-xl">
         კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*
       </p>
       <label for="number_of_days_from_office"></label>
-      <BaseRadio name="number_of_days_from_office" value="0" />
-      <BaseRadio name="number_of_days_from_office" value="1" />
-      <BaseRadio name="number_of_days_from_office" value="2" />
-      <BaseRadio name="number_of_days_from_office" value="3" />
-      <BaseRadio name="number_of_days_from_office" value="4" />
-      <BaseRadio name="number_of_days_from_office" value="5" />
+      <BaseRadio
+        name="number_of_days_from_office"
+        :value="0"
+        kaValue="0"
+        action="setNumberOfDaysFromOffice"
+        state="number_of_days_from_office"
+        module="officeInformation"
+      />
+      <BaseRadio
+        name="number_of_days_from_office"
+        :value="1"
+        kaValue="1"
+        action="setNumberOfDaysFromOffice"
+        state="number_of_days_from_office"
+        module="officeInformation"
+      />
+      <BaseRadio
+        name="number_of_days_from_office"
+        :value="2"
+        kaValue="2"
+        action="setNumberOfDaysFromOffice"
+        state="number_of_days_from_office"
+        module="officeInformation"
+      />
+      <BaseRadio
+        name="number_of_days_from_office"
+        :value="3"
+        kaValue="3"
+        action="setNumberOfDaysFromOffice"
+        state="number_of_days_from_office"
+        module="officeInformation"
+      />
+      <BaseRadio
+        name="number_of_days_from_office"
+        :value="4"
+        kaValue="4"
+        action="setNumberOfDaysFromOffice"
+        state="number_of_days_from_office"
+        module="officeInformation"
+      />
+      <BaseRadio
+        name="number_of_days_from_office"
+        :value="5"
+        kaValue="5"
+        action="setNumberOfDaysFromOffice"
+        state="number_of_days_from_office"
+        module="officeInformation"
+      />
     </div>
     <div>
       <p class="font-bold text-xl">რას ფიქრობ ფიზიკურ შეკრებებზე?</p>
@@ -46,7 +119,10 @@
       ></textarea>
     </div>
     <div class="flex justify-end">
-      <router-link :to="{ name: 'thank_you_page' }">
+      <router-link
+        :to="{ name: 'thank_you_page' }"
+        :active="meta.valid ? 'yes' : 'no'"
+      >
         <button
           class="bg-[#208298] w-44 h-14 rounded-[42px] text-white font-bold"
         >

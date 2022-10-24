@@ -8,7 +8,6 @@
       </div>
     </div>
   </div>
-  <ForwardButton active="yes" :to="{ name: 'covid_information_page' }" />
 </template>
 
 <script>
