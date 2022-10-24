@@ -119,16 +119,16 @@
       ></textarea>
     </div>
     <div class="flex justify-end">
-      <router-link
-        :to="{ name: 'thank_you_page' }"
-        :active="meta.valid ? 'yes' : 'no'"
+      <!-- <router-link :to="{ name: 'thank_you_page' }" v-if="meta.valid"> -->
+      <button
+        type="button"
+        v-if="meta.valid"
+        class="bg-[#208298] w-44 h-14 rounded-[42px] text-white font-bold"
+        @click="sendForm"
       >
-        <button
-          class="bg-[#208298] w-44 h-14 rounded-[42px] text-white font-bold"
-        >
-          დასრულება
-        </button>
-      </router-link>
+        დასრულება
+      </button>
+      <!-- </router-link> -->
     </div>
   </ValidationForm>
 </template>
@@ -140,6 +140,45 @@ export default {
   components: {
     ValidationForm,
     BaseRadio,
+  },
+  methods: {
+    sendForm() {
+      let data = this.flatten(JSON.parse(JSON.stringify(this.$store.state)));
+      if (data.antibodies_test_date && data.antibodies_test_number) {
+        data.antibodies = {
+          test_date: data.antibodies_test_date,
+          number: data.antibodies_test_number,
+        };
+        delete data.antibodies_test_date;
+        delete data.antibodies_test_number;
+      }
+      console.log(this.strToBool(this.romoveNulls(data)));
+    },
+    flatten(obj) {
+      let shallowFlat = {};
+      for (let i in obj) {
+        shallowFlat = { ...shallowFlat, ...obj[i] };
+      }
+      return shallowFlat;
+    },
+    strToBool(obj) {
+      for (let i in obj) {
+        if (obj[i] === "true") {
+          obj[i] = true;
+        } else if (obj[i] === "false") {
+          obj[i] = false;
+        }
+      }
+      return obj;
+    },
+    romoveNulls(obj) {
+      for (let i in obj) {
+        if (obj[i] === null) {
+          delete obj[i];
+        }
+      }
+      return obj;
+    },
   },
 };
 </script>

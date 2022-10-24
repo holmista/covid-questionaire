@@ -1,9 +1,9 @@
 export default {
   namespaced: true,
   state: () => ({
-    first_name: "",
-    last_name: "",
-    email: "",
+    first_name: null,
+    last_name: null,
+    email: null,
   }),
   mutations: {
     setFirstName(state, payload) {
