@@ -45,7 +45,7 @@ export default {
       const formated = [
         padTo2Digits(date.getDate()),
         padTo2Digits(date.getMonth() + 1),
-        date.getFullYear().toString().substr(-2),
+        date.getFullYear().toString().substring(2),
       ].join("/");
 
       state.covid_sickness_date = formated;
