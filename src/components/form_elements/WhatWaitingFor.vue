@@ -6,7 +6,7 @@
       kaValue="დარეგისტრირებული ვარ და ველოდები რიცხვს"
       value="registered_and_waiting"
       action="setWaitingFor"
-      state="waiting_for"
+      state="i_am_waiting"
       module="vaccinationInformation"
     />
     <BaseRadio
@@ -14,7 +14,7 @@
       kaValue="არ ვგეგმავ"
       value="not_planning"
       action="setWaitingFor"
-      state="waiting_for"
+      state="i_am_waiting"
       module="vaccinationInformation"
     />
     <BaseRadio
@@ -22,19 +22,19 @@
       kaValue="გადატანილი მაქვს და ვგეგმავ აცრას"
       value="had_covid_and_planning_to_be_vaccinated"
       action="setWaitingFor"
-      state="waiting_for"
+      state="i_am_waiting"
       module="vaccinationInformation"
     />
   </div>
   <CovidRegisterLink
     class="ml-8"
     :visible="
-      waiting_for === 'not_planning' && had_vaccine === 'false' ? 'yes' : 'no'
+      i_am_waiting === 'not_planning' && had_vaccine === 'false' ? 'yes' : 'no'
     "
   />
   <CovidRegisterLink
     :visible="
-      waiting_for === 'had_covid_and_planning_to_be_vaccinated' &&
+      i_am_waiting === 'had_covid_and_planning_to_be_vaccinated' &&
       had_vaccine === 'false'
         ? 'yes'
         : 'no'
@@ -60,7 +60,7 @@ export default {
     },
   },
   computed: {
-    ...mapState("vaccinationInformation", ["waiting_for", "had_vaccine"]),
+    ...mapState("vaccinationInformation", ["i_am_waiting", "had_vaccine"]),
   },
   methods: {
     ...mapActions("vaccinationInformation", ["setWaitingFor"]),
