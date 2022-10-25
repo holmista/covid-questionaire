@@ -1,35 +1,47 @@
 # covid-questionaire
 
-This template should help get you started developing with Vue 3 in Vite.
+covid-questionaire is a web app which helps new redberry team members communicating their covid info with redberry
 
-## Recommended IDE Setup
+## Prerequisites
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- _nodejs v16.17.0 and up_
 
-## Customize configuration
+## Tech Stack
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Javascript
+- Vuejs
+- Vuex
+- TailwindCss
+- Vite
 
 ## Project Setup
 
+1\. First of all you need to clone the repository from github:
+
 ```sh
-npm install
+git clone https://github.com/RedberryInternship/covid-questionarry-tornike.git
 ```
 
-### Compile and Hot-Reload for Development
+2\. Go to the root of the folder:
+
+```sh
+cd covid-questionarry-tornike
+```
+
+3\. Install all dependencies
+
+```sh
+npm i
+```
+
+4\. Start project
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+5\. If you want to build project for production
 
 ```sh
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
