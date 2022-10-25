@@ -7,7 +7,7 @@
       name="covid_sickness_date"
       placeholder="დდ/თთ/წწ"
       :action="setHadCovidDate"
-      :state="had_covid_date"
+      :state="covid_sickness_date"
     />
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
   },
   components: { BaseDate },
   computed: {
-    ...mapState("covidInformation", ["had_covid_date"]),
+    ...mapState("covidInformation", ["covid_sickness_date"]),
   },
   methods: {
     ...mapActions("covidInformation", ["setHadCovidDate"]),

@@ -3,7 +3,7 @@ export default {
   state: {
     had_covid: null,
     had_antibody_test: null,
-    had_covid_date: null,
+    covid_sickness_date: null,
     antibodies_test_date: null,
     antibodies_test_number: null,
   },
@@ -14,8 +14,8 @@ export default {
     had_antibody_test(state) {
       return state.had_antibody_test;
     },
-    had_covid_date(state) {
-      return state.had_covid_date;
+    covid_sickness_date(state) {
+      return state.covid_sickness_date;
     },
     antibodies_test_date(state) {
       return state.antibodies_test_date;
@@ -28,19 +28,27 @@ export default {
     setHadCovid(state, payload) {
       state.had_covid = payload;
       state.had_antibody_test = null;
-      state.had_covid_date = null;
+      state.covid_sickness_date = null;
       state.antibodies_test_date = null;
       state.antibodies_test_number = null;
     },
     setHadAntibodyTest(state, payload) {
       state.had_antibody_test = payload;
-      state.had_covid_date = null;
+      state.covid_sickness_date = null;
       state.antibodies_test_date = null;
       state.antibodies_test_number = null;
     },
 
     setHadCovidDate(state, payload) {
-      state.had_covid_date = payload;
+      const padTo2Digits = (num) => num.toString().padStart(2, "0");
+      const date = new Date(payload);
+      const formated = [
+        padTo2Digits(date.getDate()),
+        padTo2Digits(date.getMonth() + 1),
+        date.getFullYear().toString().substr(-2),
+      ].join("/");
+
+      state.covid_sickness_date = formated;
     },
     setAntibodiesTestDate(state, payload) {
       state.antibodies_test_date = payload;
