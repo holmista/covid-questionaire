@@ -3,19 +3,19 @@ export default {
   state: () => ({
     had_vaccine: null,
     vaccination_stage: null,
-    waiting_for: null,
+    i_am_waiting: null,
   }),
   mutations: {
     setHadVaccine(state, payload) {
       state.had_vaccine = payload;
       state.vaccination_stage = null;
-      state.waiting_for = null;
+      state.i_am_waiting = null;
     },
     setVaccinationStage(state, payload) {
       state.vaccination_stage = payload;
     },
     setWaitingFor(state, payload) {
-      state.waiting_for = payload;
+      state.i_am_waiting = payload;
     },
   },
   actions: {
